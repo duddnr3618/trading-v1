@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/base}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INDEX</title>
+</head>
+
+<div layout:fragment="content">
+    <div>
+        <p th:if="${userEmail == null}" th:text="비로그인"></p>
+        <p th:if="${userEmail != null}" th:text="'이메일: ' + ${userEmail}">사용자 이메일</p>
+        <p th:if="${userName != null}" th:text="'이름: ' + ${userName}">사용자 이름</p>
+        <p th:if="${userRole != null}" th:text="'역할: ' + ${userRole}">사용자 역할</p>
+    </div>
+
+</div>
+
+</html>

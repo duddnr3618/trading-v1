@@ -1,0 +1,128 @@
+/* 전체 navBar 스타일 */
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+/* 로고 스타일 */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+/* 메뉴바 스타일 */
+.menuBar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.menuBar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.menuBar ul li {
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.menuBar ul li ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menuBar ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    padding: 10px 0;
+    min-width: 150px;
+}
+
+.menuBar ul li:hover ul {
+    display: block;
+}
+
+.menuBar ul ul li {
+    padding: 10px 20px;
+}
+
+.menuBar ul ul li:hover {
+    background-color: #666;
+}
+
+.loginDiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* 햄버거 버튼 스타일 */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+.hamburger:hover + .loginMenu,
+.loginMenu:hover {
+    display: flex; /* 호버 시 메뉴 표시 */
+}
+
+/* 로그인 메뉴 스타일 */
+.loginMenu {
+    position: absolute;
+    top: 40px; /* navBar 아래에 표시 */
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none; /* 기본적으로 숨김 */
+    flex-direction: column;
+    width: 100px;
+}
+
+.loginMenu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.loginMenu a:hover {
+    color: #ddd;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .menuBar ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menuBar ul li {
+        width: 100%;
+    }
+
+    .menuBar ul ul {
+        position: static;
+    }
+}
